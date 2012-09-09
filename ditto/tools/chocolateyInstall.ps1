@@ -1,0 +1,3 @@
+Install-ChocolateyPackage 'ditto' 'exe' '/sp- /silent /norestart' 'https://sourceforge.net/projects/ditto-cp/files/Ditto/3.18.24.0/DittoSetup_3_18_24_0.exe/download' 'https://sourceforge.net/projects/ditto-cp/files/Ditto/3.18.24.0/DittoSetup_64bit_3_18_24_0.exe/download'
+Set-ItemProperty -Path HKCU:\Software\Ditto\CopyStrings -name 'powershell.exe' -value '% {{Delay100}ey'
+Set-ItemProperty -Path HKCU:\Software\Ditto\PasteStrings -name 'powershell.exe' -value '% {{Delay100}ep'
