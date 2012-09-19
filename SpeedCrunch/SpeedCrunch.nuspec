@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SpeedCrunch</id>
+    <version>0.10.1</version>
+    <authors>Helder Correia</authors>
+    <owners>zippy1981</owners>
+    <licenseUrl>http://www.gnu.org/licenses/gpl-2.0.html</licenseUrl>
+    <projectUrl>http://speedcrunch.org/</projectUrl>
+    <iconUrl>http://speedcrunch.org/icons/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SpeedCrunch is a fast, high precision and powerful desktop calculator.</description>
+    <releaseNotes>fixed virtual keypad button =
+fixed potential crashes
+fixed back and forward buttons that have the opposite meaning in RTL languages like Hebrew
+new Basque, Catalan and Simplified Chinese translations
+Microsoft Windows installer and portable package reduced to around half of the size compared to version 0.10</releaseNotes>
+    <copyright>Copyright 2008</copyright>
+    <tags>chocolatey calculator speedcrunch</tags>
+  </metadata>
+</package>
