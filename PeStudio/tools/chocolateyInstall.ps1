@@ -1,1 +1,1 @@
-Install-ChocolateyZipPackage 'PeStudio' 'http://www.winitor.com/tools/PeStudio400.zip' "$(Split-Path -parent $MyInvocation.MyCommand.Definition)" 
+Install-ChocolateyZipPackage 'PeStudio' 'http://www.winitor.com/tools/PeStudio450.zip' "$(Split-Path -parent $MyInvocation.MyCommand.Definition)" 
