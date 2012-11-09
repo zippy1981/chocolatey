@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0</version>
+    <authors>Microsoft</authors>
+    <owners>Justin Dearing</owners>
+    <projectUrl>http://msdn.microsoft.com/en-us/library/bb166441.aspx</projectUrl>
+    <id>VS2012SDK</id>
+    <title>Visual Studio 2012 SDK</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Visual Studio SDK includes documentation, samples, and code to help you develop products that integrate with the Visual Studio development system.</description>
+    <tags>Microsoft Visual-Studio SDK</tags>
+  </metadata>
+</package>
