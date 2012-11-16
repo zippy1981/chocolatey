@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>ReShaperSDK.msi</id>
+    <id>ReSharperSDK</id>
     <version>7.1.96</version>
     <authors>JetBrains</authors>
     <owners>zippy1981</owners>
     <projectUrl>http://www.jetbrains.com/resharper/download/</projectUrl>
     <iconUrl>https://github.com/ferventcoder/nugetpackages/raw/master/resharper/resharperlogo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>The .msi distribution of ReSharper SDK contains target files, the full set of ReSharper assemblies, including test infrastructure assemblies required to test ReSharper plug-ins, and ReSharper-specific Visual Studio project templates. Use this distribution for the purposes of developing ReSharper plug-ins in Visual Studio 2008, 2010, or 2012.</description>
+    <description>Meta package that installs the .msi distribution of the ReSharper SDK.</description>
     <copyright>Copyright 2003-2012</copyright>
     <tags>Visual-Studio ReSharper SDK admin</tags>
+    <dependencies>
+      <dependency id="ReSharperSDK.app" version="7.1.96" />
+    </dependencies>
   </metadata>
 </package>
