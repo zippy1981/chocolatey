@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>DroidFonts</id>
+    <version>4.0.0</version>
+    <authors>Monotype Imaging Holdings</authors>
+    <owners>zippy1981</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://www.droidfonts.com/droidfonts/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The new Droid font collection provides an extensive set of styles, weights and language support. Each of the Droid fonts was custom designed by Ascender and optimized for on-screen legibility with the Android platform.</description>
+    <releaseNotes>Initial Chocolatey Release. Fonts from Ice Cream Sandwich.</releaseNotes>
+    <copyright>Copyright 2010</copyright>
+    <tags>font monospace</tags>
+  </metadata>
+</package>
