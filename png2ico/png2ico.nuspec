@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>png2ico</id>
+    <version>2008.12.08</version>
+    <authors>Matthias S. Benkmann</authors>
+    <owners>zippy1981</owners>
+    <licenseUrl>http://www.gnu.org/licenses/gpl-2.0.html</licenseUrl>
+    <projectUrl>http://www.winterdrache.de/freeware/png2ico/</projectUrl>
+    <iconUrl>http://www.winterdrache.de/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Converts PNG files to Windows icon resource files.</description>
+    <releaseNotes>Initial release of chocolatey package.</releaseNotes>
+    <copyright>Copyright 2002</copyright>
+    <tags>graphics ping ico</tags>
+  </metadata>
+</package>
