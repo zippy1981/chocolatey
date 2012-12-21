@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>fossil</id>
+    <version>2012.10.22</version>
+    <authors>D. Richard Hipp,  SQLite contributors</authors>
+    <owners>zippy1981</owners>
+    <licenseUrl>http://www.fossil-scm.org/fossil/doc/trunk/COPYRIGHT-BSD2.txt</licenseUrl>
+    <projectUrl>http://www.fossil-scm.org/</projectUrl>
+    <iconUrl>http://www.fossil-scm.org/fossil/logo</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>There are plenty of open-source version control systems available on the internet these days. In addition to doing distributed version control like Git and Mercurial, Fossil also supports distributed bug tracking, distributed wiki, and a distributed blog mechanism all in a single integrated package.</description>
+    <releaseNotes>Initial Chocolatey Release.</releaseNotes>
+    <copyright>Copyright 2007-2012</copyright>
+    <tags>chocolatey fossil vcs dvcs bug-tracking wiki blog</tags>
+  </metadata>
+</package>
