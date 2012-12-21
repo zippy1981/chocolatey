@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>VS2010SDK</id>
+    <version>1.0</version>
+    <authors>Microsoft</authors>
+    <owners>Justin Dearing</owners>
+    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=2680</projectUrl>
+    <title>Visual Studio 2010 SDK</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Visual Studio 2010 SDK includes project templates that help developers create tool windows, menu commands, isolated shell projects, and editor extensions. The editor extensions include text adornments, colorizers, and margins.</description>
+    <tags>Microsoft Visual-Studio SDK</tags>
+  </metadata>
+</package>
