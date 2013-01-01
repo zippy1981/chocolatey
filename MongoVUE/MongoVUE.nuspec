@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MongoVUE</id>
+    <version>1.5.3</version>
+    <authors>MongoVUE</authors>
+    <owners>zippy1981</owners>
+    <projectUrl>http://www.mongovue.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MongoVUE is an innovative MongoDB desktop application for Windows OS that gives you an elegant and highly usable GUI interface to work with MongoDB. Now there is one less worry in managing your web-scale data.</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2012-2013</copyright>
+    <tags>mongodb mongovue mongo</tags>
+  </metadata>
+</package>
