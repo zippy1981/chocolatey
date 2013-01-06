@@ -6,6 +6,7 @@
     <authors>MongoVUE</authors>
     <owners>zippy1981</owners>
     <projectUrl>http://www.mongovue.com/</projectUrl>
+    <iconUrl>https://raw.github.com/zippy1981/Chocolatey-Packages-Zippy/master/MongoVUE/MongoVUE.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>MongoVUE is an innovative MongoDB desktop application for Windows OS that gives you an elegant and highly usable GUI interface to work with MongoDB. Now there is one less worry in managing your web-scale data.</description>
     <releaseNotes>Initial Release</releaseNotes>
