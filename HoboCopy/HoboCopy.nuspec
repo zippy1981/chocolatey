@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>HoboCopy</id>
+        <version>1.0.0</version>
+        <authors>Greg</authors>
+        <owners>zippy1981</owners>
+        <licenseUrl>https://github.com/candera/hobocopy/blob/master/license.txt</licenseUrl>
+        <projectUrl>https://github.com/candera/hobocopy</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>HoboCopy is a backup/copy tool. It is inspired by robocopy, but is not as fully featured as robocopy. However, it supports the Volume Shadow Service (VSS) so you can copy open files.</description>
+        <summary>A RoboCopy clone that supports VSS</summary>
+        <releaseNotes>Initial Release</releaseNotes>
+        <copyright>Copyright (c) 2011 Wangdera Corporation (hobocopy@wangdera.com)</copyright>
+        <tags>admin robocopy hobocopy VSS</tags>
+    </metadata>
+</package>
