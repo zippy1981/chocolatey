@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Reflexil</id>
+    <version>1.6</version>
+    <authors>Sebastien Lebreton</authors>
+    <owners>zippy1981</owners>
+    <licenseUrl>http://sebastien.lebreton.free.fr/reflexil/#licenseModal</licenseUrl>
+    <projectUrl>http://sebastien.lebreton.free.fr/reflexil</projectUrl>
+    <iconUrl>http://sebastien.lebreton.free.fr/reflexil/img/reflexil.48.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Reflexil is an assembly editor and runs as a plug-in for Red Gate's Reflector, a great tool for .NET developers. Reflexil is using Mono.Cecil, written by Jb Evain and is able to manipulate IL code and save the modified assemblies to disk. Reflexil also supports C#/VB.NET code injection.</description>
+    <releaseNotes>Initial chocolatey release</releaseNotes>
+    <copyright>Copyright 2007-2013</copyright>
+    <tags>reflector mono-cecil .NET</tags>
+    <dependencies>
+      <dependency id="reflector"/>
+    </dependencies>
+  </metadata>
+</package>
