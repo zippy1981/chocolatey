@@ -19,6 +19,9 @@ OPTIONAL - If there is an x64 installer to download, please include it here. If 
 .PARAMETER UnzipLocation
 This is a location to unzip the contents to, most likely your script folder.
 
+.PARAMETER SupressSuccessMessage
+OPTIONAL - Set this to true to not call Write-ChocolateySuccess. Set this when Install-ChocolateyZipPackage is not the last step in an install
+
 .EXAMPLE
 Install-ChocolateyZipPackage '__NAME__' 'URL' "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
@@ -53,6 +56,7 @@ param(
     
     Get-ChocolateyWebFile $packageName $file $url $url64bit
     Get-ChocolateyUnzip "$file" $unzipLocation $specificFolder $packageName
+    if (!$supressSuccessMessage) {Write-ChocolateySuccess $packageName}
     if (!$supressSuccessMessage) {Write-ChocolateySuccess $packageName}
   } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
