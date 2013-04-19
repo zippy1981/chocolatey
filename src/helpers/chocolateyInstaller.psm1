@@ -9,4 +9,26 @@ Resolve-Path $helpersPath\functions\*.ps1 |
     ? { -not ($_.ProviderPath.Contains(".Tests.")) } |
     % { . $_.ProviderPath }
 
-Export-ModuleMember -Function Start-ChocolateyProcessAsAdmin, Install-ChocolateyPackage, Uninstall-ChocolateyPackage, Install-ChocolateyZipPackage, Install-ChocolateyPowershellCommand, Get-ChocolateyWebFile, Install-ChocolateyInstallPackage, Get-ChocolateyUnzip, Write-ChocolateySuccess, Write-ChocolateyFailure, Install-ChocolateyPath, Install-ChocolateyDesktopLink, Install-ChocolateyPinnedTaskBarItem, Install-ChocolateyExplorerMenuItem, Install-ChocolateyFileAssociation, Install-ChocolateyEnvironmentVariable, Write-Host, Write-Debug, Write-Error, Update-SessionEnvironment, Install-ChocolateyVsixPackage
+Export-ModuleMember -Function `
+    Get-ChocolateyUnzip, 
+    Get-ChocolateyWebFile, 
+    Install-ChocolateyDesktopLink, 
+    Install-ChocolateyEnvironmentVariable, 
+    Install-ChocolateyExplorerMenuItem, 
+    Install-ChocolateyFileAssociation, 
+    Install-ChocolateyInstallPackage, 
+    Install-ChocolateyPackage, 
+    Install-ChocolateyPath, 
+    Install-ChocolateyPinnedTaskBarItem, 
+    Install-ChocolateyPowershellCommand,
+    Install-ChocolateyTrueTypeFonts,
+    Install-ChocolateyVsixPackag,
+    Install-ChocolateyZipPackage, 
+    Start-ChocolateyProcessAsAdmin, 
+    Uninstall-ChocolateyPackage, 
+    Update-SessionEnvironment, 
+    Write-ChocolateyFailure, 
+    Write-ChocolateySuccess, 
+    Write-Debug, 
+    Write-Error, 
+    Write-Host
