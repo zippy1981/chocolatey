@@ -38,7 +38,8 @@ param(
   [string] $url,
   [string] $unzipLocation,
   [string] $url64bit = $url,
-  [string] $specificFolder =""
+  [string] $specificFolder ="",
+  [switch] $supressSuccessMessage
 )
   Write-Debug "Running 'Install-ChocolateyZipPackage' for $packageName with url:`'$url`', unzipLocation: `'$unzipLocation`', url64bit: `'$url64bit`' ";
   
@@ -52,8 +53,7 @@ param(
     
     Get-ChocolateyWebFile $packageName $file $url $url64bit
     Get-ChocolateyUnzip "$file" $unzipLocation $specificFolder $packageName
-    
-    Write-ChocolateySuccess $packageName
+    if (!$supressSuccessMessage) {Write-ChocolateySuccess $packageName}
   } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
     throw 
