@@ -56,7 +56,7 @@ param(
     
     Get-ChocolateyWebFile $packageName $file $url $url64bit
     Get-ChocolateyUnzip "$file" $unzipLocation $specificFolder $packageName
-    if (!$supressSuccessMessage) {Write-ChocolateySuccess $packageName}
+    
     if (!$supressSuccessMessage) {Write-ChocolateySuccess $packageName}
   } catch {
     Write-ChocolateyFailure $packageName $($_.Exception.Message)
