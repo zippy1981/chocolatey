@@ -35,9 +35,17 @@ This method has error handling built into it.
     if (![System.IO.Directory]::Exists($tempDir)) {[System.IO.Directory]::CreateDirectory($tempDir)}
     Install-ChocolateyZipPackage $packageName $url $tempDir -SupressSuccessMessage
  
-    $shell = New-Object -ComObject Shell.Application
-    $fontsFolder = $shell.Namespace(0x14)
-    Get-ChildItem $tempDir -Recurse -Filter *.ttf | % { $fontsFolder.CopyHere($_.FullName) }
+    $fontsFolder = Get-FontFolder
+    Get-ChildItem $tempDir -Recurse -Filter *.ttf | % {
+      $fontFileInfo = $_
+      try {
+        Join-Path $fontsFolder $fontFileInfo.Name | ? { Test-Path $_ } | % { Write-Warning "Replacing existing copy of $($_)"; Remove-SingleFont $fontFileInfo -Force | Out-Null }
+        Add-SingleFont $fontFileInfo.FullName | Out-Null
+      } catch {
+          Write-Warning "Failed to install or replace $($fontFileInfo.Name)"
+          Write-Warning $_.Exception.ToString()
+      }
+    }
     
     Remove-Item -Recurse  $tempDir
     Write-ChocolateySuccess $packageName

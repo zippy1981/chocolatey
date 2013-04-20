@@ -3,6 +3,8 @@
 $DebugPreference = "SilentlyContinue"
 if ($env:ChocolateyEnvironmentDebug -eq 'true') {$DebugPreference = "Continue";}
 
+. $helpersPath\FontHelpers.ps1
+Get-SpecialFolder 14
 
 # grab functions from files
 Resolve-Path $helpersPath\functions\*.ps1 | 
