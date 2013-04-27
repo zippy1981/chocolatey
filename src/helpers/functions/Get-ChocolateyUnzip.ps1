@@ -44,6 +44,16 @@ param(
   
   Write-Debug "Running 'Get-ChocolateyUnzip' with fileFullPath:`'$fileFullPath`'',destination:$destination";
 
+  if ($packageName) {
+    $packagelibPath=$env:chocolateyPackageFolder
+    if (!(Test-Path -path $packagelibPath)) {
+      New-Item $packagelibPath -type directory
+    }
+ 
+    $zipFilename=split-path $zipfileFullPath -Leaf
+    $zipExtractLogFullPath=join-path $packagelibPath $zipFilename`.txt
+  }
+
   Write-Host "Extracting $fileFullPath to $destination..."
   if (![System.IO.Directory]::Exists($destination)) {[System.IO.Directory]::CreateDirectory($destination)}
   
@@ -51,37 +61,41 @@ param(
   $zipPackage = $shellApplication.NameSpace($fileFullPath) 
   $destinationFolder = $shellApplication.NameSpace($destination)
   $zipPackageItems = $zipPackage.Items()
-  $destinationFolder.CopyHere($zipPackageItems,0x14) 
 
-  if ($packageName) {
-    $packagelibPath=$env:chocolateyPackageFolder
-    if (!(Test-Path -path $packagelibPath)) {
-      New-Item $packagelibPath -type directory
-    }
- 
-  $zipFilename=split-path $zipfileFullPath -Leaf
-  $zipExtractLogFullPath=join-path $packagelibPath $zipFilename`.txt
-  Get-ZipItems_Recursive $zipPackageItems $specificFolder $destination |add-content $zipExtractLogFullPath
+  if ($zipExtractLogFullPath) {
+    Write-FileUpdateLog $zipExtractLogFullPath $destination {$destinationFolder.CopyHere($zipPackageItems,0x14)}
+  } else {
+    $destinationFolder.CopyHere($zipPackageItems,0x14) 
   }
+
   return $destination
 }
 
-function Get-ZipItems_recursive {
-  param(
-    [object]$subitems,
-    [string]$specificFolder,
-    [string]$target)
-    
-  foreach($file in $subitems) {
-    if($file.getfolder -ne $null) {
-      Get-ZipItems_recursive $file.getfolder.items() $specificfolder $target
-    }
-    $extension=".zip"
-    $pathStrip=join-path $extension $specificFolder
-    $fileIndex=$file.path.indexof("$pathStrip")+$pathStrip.Length
-    $insideZipFile=$file.path.substring($fileIndex)
-    $finalFilePath=join-path $target $insideZipFile
-    write-output $finalFilePath
-    
-  }
-} 
+function Write-FileUpdateLog {
+  param (
+    [string] $logFilePath,
+    [string] $locationToMonitor,
+    [scriptblock] $operationToLog    
+  )
+
+  $originalContents = Get-ChildItem -Recurse $locationToMonitor | Select-Object LastWriteTimeUTC,FullName,Length
+
+  . $operationToLog
+
+  $newContents = Get-ChildItem -Recurse $locationToMonitor | Select-Object LastWriteTimeUTC,FullName,Length
+
+  if($originalContents -eq $null) {$originalContents = @()}
+  if($newContents -eq $null) {$newContents = @()}
+  
+  $changedFiles = Compare-Object $originalContents $newContents -Property LastWriteTimeUtc,FullName,Length -PassThru | Group-Object FullName
+
+  #log modified files
+  $changedFiles | ? {$_.Count -gt 1} | % {$_.Name} | Add-Content $logFilePath
+ 
+  #log added files
+  $addOrDelete = $changedFiles | ? { $_.Count -eq 1 } | % {$_.Group}
+  $addOrDelete | ? {$_.SideIndicator -eq "=>"} | % {$_.FullName} | Add-Content $logFilePath
+
+  #log deleted files
+  #$addOrDelete | ? {$_.SideIndicator -eq "<="} | % {$_.FullName} | Add-Content $logFilePath
+}

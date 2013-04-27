@@ -10,7 +10,7 @@ param(
     & cmd.exe $webpiArgs 
   } elseif ($source -like 'windowsfeatures') {
     $chocoInstallLog = Join-Path $nugetChocolateyPath 'chocolateyWindowsFeaturesInstall.log';
-    Remove-LastInstallLog $chocoInstallLog
+    Append-Log $chocoInstallLog
     $windowsFeaturesArgs ="/c dism /online /get-features /format:table | Tee-Object -FilePath `'$chocoInstallLog`';"
     Start-ChocolateyProcessAsAdmin "cmd.exe $windowsFeaturesArgs" -nosleep
     Create-InstallLogIfNotExists $chocoInstallLog
@@ -21,6 +21,10 @@ param(
   } else {  
   
   	$srcArgs = Get-SourceArguments $source
+
+    if ($localonly) {
+      $srcArgs = "-Source $nugetLibPath"
+    }
     
     $parameters = "list"
     if ($selector -ne '') {

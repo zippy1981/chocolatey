@@ -7,4 +7,3 @@ if ($env:ChocolateyEnvironmentDebug -eq 'true') {$DebugPreference = "Continue";}
 Get-Item $helpersPath\functions\*.ps1 | 
     ? { -not ($_.Name.Contains(".Tests.")) } |
     % { . $_.FullName;  if ( -not ($_.Name.Contains(".Internal.")))  { Export-ModuleMember -Function $_.BaseName } }
-
